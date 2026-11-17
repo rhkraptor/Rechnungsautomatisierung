@@ -25,15 +25,15 @@ Repository preparation and public documentation are available. No extraction API
 4. Use synthetic inputs only. Keep raw responses, authentication data, resource identifiers, and detailed evidence outside public tracking.
 5. Verify permissions and licensing before testing services. Use an existing authorized SharePoint site and mailbox. Explain intended cloud changes before executing them.
 
-There is no runnable application or test command yet. No installer, provisioning script, dependency manager configuration, or deployment automation is included.
+EXP-01 now provides a standard-library Python extraction runner and offline tests. See [the experiment guide](docs/EXP-01.md). Run `python -B -m unittest discover -s tests -v` for offline tests; these do not call Azure. No packages need to be installed. Cloud extraction has not yet succeeded in the agent environment.
 
 ## Layout
 
 | Path | Responsibility |
 |---|---|
-| `src/` | Future Python validation logic |
-| `tests/` | Future offline validation tests and reviewed synthetic fixtures |
-| `scripts/` | Future PowerShell configuration and test helpers |
+| `src/` | Reserved for future shared validation logic |
+| `tests/` | Offline extraction/comparison tests using invented fixtures |
+| `scripts/` | EXP-01 extraction runner; no provisioning commands |
 | `powerautomate/` | Sanitized workflow documentation and future reviewed definitions |
 | `config/` | Placeholder configuration template |
 | `docs/` | Public architecture and publication policy |

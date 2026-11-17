@@ -1,3 +1,3 @@
-# PowerShell helpers
+# Experiment helpers
 
-Reserved for individually reviewed, reproducible configuration and test scripts. No scripts are implemented yet. Read settings from environment variables or approved secret stores, avoid secret output, and keep detailed evidence private. Explain cloud changes before execution.
+`extract_invoice.py` implements EXP-01 with the Python standard library and existing Azure CLI. See `docs/EXP-01.md`. It reads only an existing resource and submits a synthetic document for analysis. It does not create or reconfigure cloud resources. Authentication and detailed evidence remain private.
