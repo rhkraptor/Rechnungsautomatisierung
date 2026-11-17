@@ -27,6 +27,8 @@ Repository preparation and public documentation are available. No extraction API
 
 EXP-01 now provides a standard-library Python extraction runner and offline tests. See [the experiment guide](docs/EXP-01.md). Run `python -B -m unittest discover -s tests -v` for offline tests; these do not call Azure. No packages need to be installed. Cloud extraction has not yet succeeded in the agent environment.
 
+[EXP-02](docs/EXP-02.md) adds a single-attempt hosted refinement runner using saved DI text, strict structured output, source grounding checks, and separate Ground Truth evaluation. It does not change the original extraction or require another DI call. Live refinement is not yet verified.
+
 ## Layout
 
 | Path | Responsibility |

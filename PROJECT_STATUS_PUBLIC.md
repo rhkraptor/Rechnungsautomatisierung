@@ -1,6 +1,6 @@
 # Public project status
 
-Report version: 0.3.0
+Report version: 0.4.0
 
 Updated: 2026-11-17
 
@@ -18,9 +18,11 @@ This report contains public milestones only. It does not reproduce internal asse
 | Outlook intake | Not verified | No successful trigger/attachment run evidenced here |
 | Power Automate orchestration | Not verified | No successful connector or end-to-end run evidenced here |
 | EXP-01 offline tests | Passed | Ten tests of comparison, workbook parsing, and mocked HTTP behavior; not live Azure evidence |
+| EXP-02 hosted refinement runner | Implemented; live inference not verified | Existing GPT-5 mini deployment identified privately; one-attempt guard and 1,024-completion-token cap |
+| Combined offline suite | Passed | Nineteen tests; no hosted inference performed by tests |
 
 The supplier name was present in a separate address-recipient field, while the primary supplier-name field selected a document heading. Raw extraction and expected values were preserved privately; no fallback was applied and the mismatch remains. The run took approximately 10.35 seconds including discovery, authentication, polling, and comparison; this is not an extraction-only latency benchmark. One invoice does not establish general accuracy. Entra-token extraction previously returned HTTP 401; its cause is unresolved.
 
-Next priority: agree on supplier-name review/validation behavior and evaluate it separately from raw extraction, then extend testing to additional synthetic cases. Storage/mailbox integration has not started.
+Next priority: execute the approved single hosted refinement attempt from an authenticated user terminal, using saved DI text without Ground Truth in the prompt. Agent discovery remains blocked by its separate authentication context; no inference request was made by the agent. Evaluate source grounding and compare baseline/refined fields independently. Thresholds and field importance remain undecided. Storage/mailbox integration has not started.
 
 Publishing this report requires separate approval. It becomes retrievable through GitHub only after an approved commit and push; local preparation does not publish it. Future updates must cite only sanitized, shareable milestone evidence and must not include raw API output or private references.
