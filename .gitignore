@@ -12,6 +12,7 @@
 !/docs/EXP-01.md
 !/docs/EXP-02.md
 !/docs/EXP-03.md
+!/docs/VALIDATION_POLICY.md
 !/config/
 /config/*
 !/config/.env.example
@@ -21,15 +22,18 @@
 !/scripts/extract_invoice.py
 !/scripts/refine_invoice.py
 !/scripts/evaluate_invoice_batch.py
+!/scripts/validate_saved_results.py
 !/src/
 /src/*
 !/src/README.md
+!/src/invoice_validation.py
 !/tests/
 /tests/*
 !/tests/README.md
 !/tests/test_extract_invoice.py
 !/tests/test_refine_invoice.py
 !/tests/test_evaluate_invoice_batch.py
+!/tests/test_invoice_validation.py
 !/powerautomate/
 /powerautomate/*
 !/powerautomate/README.md

@@ -31,11 +31,13 @@ EXP-01 now provides a standard-library Python extraction runner and offline test
 
 [EXP-03](docs/EXP-03.md) completed a bounded four-file evaluation: DI baseline 23/28 observation matches, source-grounded refinement 28/28 (27 populated values plus one correct absence). Reports keep observation scores separate from provisional review dispositions. The fixtures include a duplicate pair and share layout characteristics; these results do not establish general accuracy or production readiness.
 
+[Validation policy v0.1](docs/VALIDATION_POLICY.md) now requires all seven fields, tester review of DI/LLM disagreements, and suspected-duplicate flags for matching supplier/invoice number. The local replay placed all five saved fixtures in a private review queue without new cloud calls or automatic approvals. Correct extraction and workflow acceptance remain separate outcomes.
+
 ## Layout
 
 | Path | Responsibility |
 |---|---|
-| `src/` | Reserved for future shared validation logic |
+| `src/` | Pure local invoice-validation and review rules |
 | `tests/` | Offline extraction/comparison tests using invented fixtures |
 | `scripts/` | EXP-01 extraction runner; no provisioning commands |
 | `powerautomate/` | Sanitized workflow documentation and future reviewed definitions |

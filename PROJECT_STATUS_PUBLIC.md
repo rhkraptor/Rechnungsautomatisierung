@@ -1,6 +1,6 @@
 # Public project status
 
-Report version: 0.7.0
+Report version: 0.8.0
 
 Updated: 2026-11-17
 
@@ -20,7 +20,9 @@ This report contains public milestones only. It does not reproduce internal asse
 | EXP-01 offline tests | Passed | Ten tests of comparison, workbook parsing, and mocked HTTP behavior; not live Azure evidence |
 | EXP-02 hosted refinement | Verified on the same exploratory invoice | Existing GPT-5 mini deployment; baseline 6/7 fields matched, source-grounded refinement 7/7; original baseline preserved |
 | EXP-03 bounded batch | Completed and locally replay-verified | Four DI analyses and four capped LLM requests; baseline 23/28 observations matched, refined 28/28; no automatic retries |
-| Combined offline suite | Passed | Twenty-nine tests; no hosted inference performed by tests |
+| Local validation policy v0.1 | Implemented and replayed | All seven fields mandatory; tester review for disagreements; supplier/invoice-number suspected-duplicate flags |
+| Five-fixture policy replay | Completed locally | Five review-required records; missing mandatory number and duplicate pair also flagged; zero cloud calls or automatic approvals |
+| Combined offline suite | Passed | Forty-two tests; no hosted inference performed by tests |
 
 The supplier name was present in a separate address-recipient field, while the primary supplier-name field selected a document heading. Raw extraction and expected values were preserved privately; no fallback was applied and the mismatch remains. The run took approximately 10.35 seconds including discovery, authentication, polling, and comparison; this is not an extraction-only latency benchmark. One invoice does not establish general accuracy. Entra-token extraction previously returned HTTP 401; its cause is unresolved.
 
@@ -32,6 +34,8 @@ The authenticated user-terminal batch completed. Per-case baseline scores were 5
 
 The duplicate pair matched on seven available refined header values, without an automatic duplicate decision. DI reported two items for the two-position fixture; individual item values remain unvalidated. All cases retain provisional review-required dispositions. The four files include a duplicate pair and share synthetic layout characteristics, so 28/28 is fixture-level observation agreement, not a general accuracy estimate.
 
-Batch LLM usage was 2,269 prompt tokens and 1,090 completion tokens (3,359 total); every request stayed below its 1,024-completion-token cap. Effective monetary cost/credit coverage remains unverified. The four-plus-four attempt budget is consumed and guards remain in place. Thresholds and required/optional field classifications remain undecided. Storage/mailbox integration has not started. Next: finalize provisional field/review requirements and design more varied validation examples before further authorized calls or integration.
+Batch LLM usage was 2,269 prompt tokens and 1,090 completion tokens (3,359 total); every request stayed below its 1,024-completion-token cap. Effective monetary cost/credit coverage remains unverified. The four-plus-four attempt budget is consumed and guards remain in place.
+
+The user selected all seven tested fields as mandatory, tester review of DI/LLM disagreements, and suspected-duplicate flags for matching supplier plus invoice number without deletion/rejection. These choices are implemented as local policy v0.1. Replay uses saved source evidence and extracted values, not Ground Truth, and produced five review-required records because all five have supplier-name disagreements; the missing-number fixture and both duplicate-group members have additional flags. Correct refined values remain preserved. Full automation is the long-term objective; no automatic approval or review resolution is implemented. Numerical confidence thresholds remain undecided. Storage/mailbox integration has not started. Next: tester resolution of the private queue and further acceptance-policy design before integration.
 
 Publishing this report requires separate approval. It becomes retrievable through GitHub only after an approved commit and push; local preparation does not publish it. Future updates must cite only sanitized, shareable milestone evidence and must not include raw API output or private references.
