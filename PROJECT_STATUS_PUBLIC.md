@@ -1,6 +1,6 @@
 # Public project status
 
-Report version: 0.4.0
+Report version: 0.5.0
 
 Updated: 2026-11-17
 
@@ -18,11 +18,15 @@ This report contains public milestones only. It does not reproduce internal asse
 | Outlook intake | Not verified | No successful trigger/attachment run evidenced here |
 | Power Automate orchestration | Not verified | No successful connector or end-to-end run evidenced here |
 | EXP-01 offline tests | Passed | Ten tests of comparison, workbook parsing, and mocked HTTP behavior; not live Azure evidence |
-| EXP-02 hosted refinement runner | Implemented; live inference not verified | Existing GPT-5 mini deployment identified privately; one-attempt guard and 1,024-completion-token cap |
+| EXP-02 hosted refinement | Verified on the same exploratory invoice | Existing GPT-5 mini deployment; baseline 6/7 fields matched, source-grounded refinement 7/7; original baseline preserved |
 | Combined offline suite | Passed | Nineteen tests; no hosted inference performed by tests |
 
 The supplier name was present in a separate address-recipient field, while the primary supplier-name field selected a document heading. Raw extraction and expected values were preserved privately; no fallback was applied and the mismatch remains. The run took approximately 10.35 seconds including discovery, authentication, polling, and comparison; this is not an extraction-only latency benchmark. One invoice does not establish general accuracy. Entra-token extraction previously returned HTTP 401; its cause is unresolved.
 
-Next priority: execute the approved single hosted refinement attempt from an authenticated user terminal, using saved DI text without Ground Truth in the prompt. Agent discovery remains blocked by its separate authentication context; no inference request was made by the agent. Evaluate source grounding and compare baseline/refined fields independently. Thresholds and field importance remain undecided. Storage/mailbox integration has not started.
+The authorized single user-terminal inference completed with 564 prompt tokens and 280 completion tokens (844 total), within the 1,024-completion-token cap, with no automatic retries. End-to-end refinement run time was approximately 9.90 seconds, including discovery, authentication, inference, grounding and comparison; this excludes the earlier DI extraction. All seven returned fields passed local source-grounding checks and matched the unchanged workbook. The supplier-name mismatch was corrected in the separate refined result. No numerical model confidence was invented. The one-attempt authorization is consumed and the guard remains in place.
+
+The request contained only saved DI source text and generic extraction instructions; Ground Truth was loaded separately for evaluation after inference. This invoice had already informed development, so 7/7 is an exploratory result, not independent validation or evidence of general accuracy. Inference worked using existing-resource key authentication; Entra-token access remains unresolved and effective monetary cost/credit coverage is not verified.
+
+Next priority: design evaluation on additional synthetic cases and agree field importance and review rules. Further hosted calls need a separate budget/attempt decision. Thresholds remain undecided. Storage/mailbox integration has not started.
 
 Publishing this report requires separate approval. It becomes retrievable through GitHub only after an approved commit and push; local preparation does not publish it. Future updates must cite only sanitized, shareable milestone evidence and must not include raw API output or private references.
