@@ -1,6 +1,6 @@
 # Public project status
 
-Report version: 0.5.0
+Report version: 0.6.0
 
 Updated: 2026-11-17
 
@@ -19,7 +19,8 @@ This report contains public milestones only. It does not reproduce internal asse
 | Power Automate orchestration | Not verified | No successful connector or end-to-end run evidenced here |
 | EXP-01 offline tests | Passed | Ten tests of comparison, workbook parsing, and mocked HTTP behavior; not live Azure evidence |
 | EXP-02 hosted refinement | Verified on the same exploratory invoice | Existing GPT-5 mini deployment; baseline 6/7 fields matched, source-grounded refinement 7/7; original baseline preserved |
-| Combined offline suite | Passed | Nineteen tests; no hosted inference performed by tests |
+| EXP-03 bounded batch runner | Implemented; live results pending | Four synthetic files; at most four DI analyses and four capped LLM requests, no retries; existing resources only |
+| Combined offline suite | Passed | Twenty-nine tests; no hosted inference performed by tests |
 
 The supplier name was present in a separate address-recipient field, while the primary supplier-name field selected a document heading. Raw extraction and expected values were preserved privately; no fallback was applied and the mismatch remains. The run took approximately 10.35 seconds including discovery, authentication, polling, and comparison; this is not an extraction-only latency benchmark. One invoice does not establish general accuracy. Entra-token extraction previously returned HTTP 401; its cause is unresolved.
 
@@ -27,6 +28,6 @@ The authorized single user-terminal inference completed with 564 prompt tokens a
 
 The request contained only saved DI source text and generic extraction instructions; Ground Truth was loaded separately for evaluation after inference. This invoice had already informed development, so 7/7 is an exploratory result, not independent validation or evidence of general accuracy. Inference worked using existing-resource key authentication; Entra-token access remains unresolved and effective monetary cost/credit coverage is not verified.
 
-Next priority: design evaluation on additional synthetic cases and agree field importance and review rules. Further hosted calls need a separate budget/attempt decision. Thresholds remain undecided. Storage/mailbox integration has not started.
+The additional four-file evaluation is authorized within its fixed budget. Missing-number absence is evaluated separately from field completeness; duplicate-content observations and a two-position item-count observation do not implement final workflow rules. The fixture set contains a duplicate pair and is not independent validation data. All cases remain subject to review while business rules are provisional. Agent execution stopped during preflight without consuming service attempts; authenticated user-terminal execution is pending. Thresholds remain undecided. Storage/mailbox integration has not started.
 
 Publishing this report requires separate approval. It becomes retrievable through GitHub only after an approved commit and push; local preparation does not publish it. Future updates must cite only sanitized, shareable milestone evidence and must not include raw API output or private references.

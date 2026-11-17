@@ -11,6 +11,7 @@
 !/docs/PUBLICATION.md
 !/docs/EXP-01.md
 !/docs/EXP-02.md
+!/docs/EXP-03.md
 !/config/
 /config/*
 !/config/.env.example
@@ -19,6 +20,7 @@
 !/scripts/README.md
 !/scripts/extract_invoice.py
 !/scripts/refine_invoice.py
+!/scripts/evaluate_invoice_batch.py
 !/src/
 /src/*
 !/src/README.md
@@ -27,6 +29,7 @@
 !/tests/README.md
 !/tests/test_extract_invoice.py
 !/tests/test_refine_invoice.py
+!/tests/test_evaluate_invoice_batch.py
 !/powerautomate/
 /powerautomate/*
 !/powerautomate/README.md

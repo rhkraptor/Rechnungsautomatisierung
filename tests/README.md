@@ -5,3 +5,5 @@ Run `python -B -m unittest discover -s tests -v` for offline comparison, workboo
 Duplicate and line-item validation remain future work. Live extraction is a separate, explicitly invoked experiment; an offline pass is not evidence of Azure access.
 
 EXP-02 checks cover the capped source-only request, endpoint restrictions, inventory compatibility, source grounding, unsupported values, date/amount normalization, missing fields, and the persistent single-attempt guard. They never invoke a hosted model.
+
+EXP-03 adds absence semantics, fabricated-number rejection, disagreement review, per-case/service guards, failure without retries, started-batch protection, and header-equality observations without automatic duplicate decisions.

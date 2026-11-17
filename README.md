@@ -29,6 +29,8 @@ EXP-01 now provides a standard-library Python extraction runner and offline test
 
 [EXP-02](docs/EXP-02.md) adds a single-attempt hosted refinement runner using saved DI text, strict structured output, source grounding checks, and separate Ground Truth evaluation. On the initial exploratory invoice, the DI baseline matched 6/7 fields and refinement matched 7/7. This does not establish general accuracy. Original extraction evidence remains unchanged, and refinement requires no additional DI call.
 
+[EXP-03](docs/EXP-03.md) prepares a bounded four-file evaluation with separate observation scores and provisional review dispositions. It includes missing-value semantics, header-equality observations, and line-item count reporting. Live batch results are not yet verified.
+
 ## Layout
 
 | Path | Responsibility |
